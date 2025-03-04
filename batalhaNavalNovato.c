@@ -1,25 +1,32 @@
 #include <stdio.h>
 
-int main () {
-
-    int index;
-
-    char * nomesAlunos [3][3] = {
-        {"Aluno 0", "Pt: 30", "Mat: 90"},
-        {"Aluno 1", "Pt: 60", "Mat: 60"},
-        {"Aluno 2", "Pt: 90", "Mat: 30"}
-    };
-
-    printf("Digite o numero do aluno que queira ver as notas...\n");
-    printf("Para o aluno 1, digite 0 \n");
-    printf("Para o aluno 1, digite 1 \n");
-    printf("Para o aluno 2, digite 2 \n");
-
-    scanf("%d", &index);
-
-    printf("As notas do %s sao - %s %s \n", nomesAlunos[index][0], nomesAlunos[index][1], nomesAlunos[index][2]);
-    printf("\n");
-
+int main() {
+  
+    int tabuleiro[10][10];
+    
+    for (int linha = 0; linha < 10; linha++) {
+        for (int coluna = 0; coluna < 10; coluna++) {
+            tabuleiro[linha][coluna] = 0;
+        }
+    }
+    
+    // Colocar um navio horizontal
+    tabuleiro[3][2] = 3;
+    tabuleiro[3][3] = 3;
+    tabuleiro[3][4] = 3;
+    
+    // Colocar um navio vertical
+    tabuleiro[5][7] = 3;
+    tabuleiro[6][7] = 3;
+    tabuleiro[7][7] = 3;
+    
+    printf("Tabuleiro de Batalha Naval:\n");
+    for (int linha = 0; linha < 10; linha++) {
+        for (int coluna = 0; coluna < 10; coluna++) {
+            printf("%d ", tabuleiro[linha][coluna]);
+        }
+        printf("\n");
+    }
+    
     return 0;
-
 }
